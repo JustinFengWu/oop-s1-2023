@@ -1,10 +1,10 @@
 #include <string>
 #include <iostream>
 
-std::string print_binary_str(std::string);
+void print_binary_str(std::string);
 
 int main() {
-    std::string number = "765";
-    std::cout << print_binary_str(number) << std::endl;
+    std::string number = "11";
+    print_binary_str(number);
     return 0;
 }

@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
 
-std::string print_binary_str(std::string decimal_number) {
-  int temp = std::stoi(decimal_number);
+void print_binary_str(std::string decimal_number) {
+  int temp = stoi(decimal_number);
   int counter = 0;
   int i = 0;
 
-  while (temp / 2 != 0) {
+  while (temp != 0) {
     temp /= 2;
     counter++;
   }
@@ -21,12 +21,11 @@ std::string print_binary_str(std::string decimal_number) {
     i++;
   }
 
-  std::string binary_string;
   for (int j = i - 1; j >= 0; j--) {
-    binary_string += std::to_string(binary_numbers[j]);
+    std::cout << binary_numbers[j];
   }
+  std::cout << std::endl;
 
   delete[] binary_numbers;
 
-  return binary_string;
 }
