@@ -1,8 +1,8 @@
 #include <iostream>
 
-int sum_array_elements(int[6], int);
-bool is_palindrome(int[6], int);
-int sum_if_palindrome(int[6], int);
+int sum_array_elements(int[], int);
+bool is_palindrome(int[], int);
+int sum_if_palindrome(int[], int);
 
 int main() {
     int length = 6;
