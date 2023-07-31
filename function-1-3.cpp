@@ -1,7 +1,7 @@
 #include <iostream>
 
 void count_digits(int array[4][4]){
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 10; i++) {
         int counter = 0;
         for (int j = 0; j < 4; j++) {
             for (int z = 0; z < 4; z++){
