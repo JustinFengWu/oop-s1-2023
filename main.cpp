@@ -1,5 +1,5 @@
-#include "workshop.h"
 #include <iostream>
+#include "workshop.h"
 
 int main() {
 
@@ -14,4 +14,4 @@ int main() {
     std::cout << "Maximum value: " << arrayMax(doubleArray, 6) << std::endl;
 
     return 0;
-}
+} 

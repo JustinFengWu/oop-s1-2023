@@ -1,3 +1,5 @@
+all: workshop
+
 #workshop 3 makefile
 
 workshop: main.o
@@ -7,3 +9,6 @@ main.o: main.cpp workshop.h
 
 run:
 	./workshop
+
+clean:
+    rm -f workshop main.o
