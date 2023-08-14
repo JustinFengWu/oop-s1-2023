@@ -7,5 +7,7 @@ int main() {
     int *result = readNumbers();
     printNumbers(result, 10);
 
+
+    delete[] result;
     return 0;
 }
