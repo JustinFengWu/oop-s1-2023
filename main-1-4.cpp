@@ -5,7 +5,13 @@ PersonList createPersonList(int);
 PersonList shallowCopyPersonList(PersonList);
 int main() {
     int n = 10;
-    PersonList List = createPersonList(n);
+    PersonList List;
+    List.numPeople = n;
+    List.people = new Person[n];
+    for (int i = 0; i < n; i++) {
+        List.people[i].name = "John Doe";
+        List.people[i].age = 1;
+    }
     PersonList List2 = shallowCopyPersonList(List);
     for (int i = 0; i < n; i++) {
         std::cout << List.numPeople << " " << List.people[i].name << " " << List.people[i].age << std::endl;
