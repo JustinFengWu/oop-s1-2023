@@ -1,8 +1,8 @@
 #include "Musician.h"
 
 Musician::Musician() {
-    experience = 0;
-    instrument = "null";
+    experienc = 0;
+    instrumen = "null";
 }
 
 Musician::Musician(std::string inst, int exp) {
