@@ -5,8 +5,8 @@
 #include "Unit.h"
 
 ApartmentBuilding::ApartmentBuilding() { 
-    capacity = 0;
-    current_size = 0;
+    int capacity = 0;
+    int current_size = 0;
     Unit * rooms;
  }
 
