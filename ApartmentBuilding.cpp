@@ -5,16 +5,16 @@
 #include "Unit.h"
 
 ApartmentBuilding::ApartmentBuilding() { 
-    int capacity = 0;
-    int current_size = 0;
+    capacity = 0;
+    current_size = 0;
     Unit * rooms;
  }
 
 
 ApartmentBuilding::ApartmentBuilding(int capacity) {
   this->capacity = capacity;
-  Unit * rooms = new Unit[capacity];
-  int current_size = 0;
+  rooms = new Unit[capacity];
+  current_size = 0;
 }
 
 

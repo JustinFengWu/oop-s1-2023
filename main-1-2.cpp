@@ -6,8 +6,22 @@
 int main() {
     ApartmentBuilding ap1(10);
     Unit u1(0, 0, 0);
+    Unit u2(1, 2, 3);
+    Unit u3(3, 4, 5);
 
     if (ap1.add_Unit(u1)) {
+        std::cout << "Sucessfully Added." << std::endl;
+    } else {
+        std::cout << "failed to add. " << std::endl;
+    }
+
+    if (ap1.add_Unit(u2)) {
+        std::cout << "Sucessfully Added." << std::endl;
+    } else {
+        std::cout << "failed to add. " << std::endl;
+    }
+
+    if (ap1.add_Unit(u3)) {
         std::cout << "Sucessfully Added." << std::endl;
     } else {
         std::cout << "failed to add. " << std::endl;
