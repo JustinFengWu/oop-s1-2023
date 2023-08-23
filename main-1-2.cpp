@@ -15,8 +15,9 @@ int main() {
 
     Unit * room = ap1.get_Contents();
 
-    int current_size = ap1.get_Current_Number_of_Units();
-    for (int i = 0; i < current_size; i++){
+    int current_sizes = ap1.get_Current_Number_of_Units();
+    
+    for (int i = 0; i < current_sizes; i++){
         std::cout << room[i].get_Value() << std::endl;
     }
 
