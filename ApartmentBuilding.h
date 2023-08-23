@@ -15,9 +15,10 @@ public:
     ApartmentBuilding(int capacity);
     int get_Current_Number_of_Units();
     int get_Capacity();
-    Unit * get_Contents;
+    Unit * get_Contents();
     bool add_Unit(Unit unit);
     ~ApartmentBuilding();
+
 
     
 };
