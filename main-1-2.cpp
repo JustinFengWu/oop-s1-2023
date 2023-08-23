@@ -27,7 +27,8 @@ int main() {
         std::cout << "failed to add. " << std::endl;
     }
 
-    Unit * rooms = ap1.get_Contents();
+    Unit *rooms = ap1.get_Contents();
+
     int current_size = ap1.get_Current_Number_of_Units();
     for (int i = 0; i < current_size; i++){
         std::cout << rooms[i].get_Value() << std::endl;

@@ -12,7 +12,7 @@ Unit::Unit(int unit_val, int num_beds, double unit_size) {
     this->unit_size = unit_size;
 }
 
-int Unit::get_Number_Bedrooms() {
+int Unit::get_Num_Bedrooms() {
     return num_beds;
 }
 
