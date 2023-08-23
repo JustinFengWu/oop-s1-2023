@@ -25,7 +25,7 @@ int ApartmentBuilding::get_Capacity() {
 
 Unit * ApartmentBuilding::get_Contents() {
     return rooms;
-};
+}
 
 
 bool ApartmentBuilding::add_Unit(Unit unit){
