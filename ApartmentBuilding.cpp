@@ -17,17 +17,17 @@ ApartmentBuilding::ApartmentBuilding(int capacity) {
 }
 
 
-int ApartmentBuilding::get_capacity() {
+int ApartmentBuilding::get_Capacity() {
     return capacity; 
 }
 
 
-Unit* ApartmentBuilding::get_contents(){
+Unit* ApartmentBuilding::get_Contents(){
     return rooms;
 };
 
 
-bool ApartmentBuilding::add_unit(Unit unit){
+bool ApartmentBuilding::add_Unit(Unit unit){
     if (current_size >= capacity) {
         return false;
     }
@@ -36,6 +36,11 @@ bool ApartmentBuilding::add_unit(Unit unit){
     return true;
 }
 
-~ApartmentBuilding() {
+
+int ApartmentBuilding::get_Current_Number_of_Units(){
+    return current_size;
+}
+
+ApartmentBuilding::~ApartmentBuilding() {
     delete[] rooms;
 }

@@ -13,9 +13,10 @@ private:
 public:
     ApartmentBuilding();
     ApartmentBuilding(int capacity);
-    int get_capacity();
-    Unit * get_contents;
-    bool add_unit(Unit unit);
+    int get_Current_Number_of_Units();
+    int get_Capacity();
+    Unit * get_Contents;
+    bool add_Unit(Unit unit);
     ~ApartmentBuilding();
 
     

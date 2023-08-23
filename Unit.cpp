@@ -12,14 +12,14 @@ Unit::Unit(int unit_val, int num_beds, double unit_size) {
     this->unit_size = unit_size;
 }
 
-int Unit::get_number_bedrooms() {
+int Unit::get_Number_Bedrooms() {
     return num_beds;
 }
 
-int Unit::get_value() {
+int Unit::get_Value() {
     return unit_val;
 }
 
-double Unit::get_area() {
+double Unit::get_Area() {
     return unit_size;
 }

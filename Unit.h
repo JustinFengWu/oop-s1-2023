@@ -10,9 +10,9 @@ private:
 public:
     Unit();
     Unit(int unit_val, int num_beds, double unit_size);
-    int get_number_bedrooms();
-    int get_value();
-    double get_area();
+    int get_Number_Bedrooms();
+    int get_Value();
+    double get_Area();
     
 };
 
