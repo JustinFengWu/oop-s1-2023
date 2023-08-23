@@ -13,7 +13,7 @@ ApartmentBuilding::ApartmentBuilding() {
 
 ApartmentBuilding::ApartmentBuilding(int capacity) {
   this->capacity = capacity;
-  Unit* rooms = new Unit[capacity];
+  Unit * rooms = new Unit[capacity];
   int current_size = 0;
 }
 
@@ -23,7 +23,7 @@ int ApartmentBuilding::get_Capacity() {
 }
 
 
-Unit* ApartmentBuilding::get_Contents() {
+Unit * ApartmentBuilding::get_Contents() {
     return rooms;
 };
 
