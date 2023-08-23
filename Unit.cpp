@@ -6,7 +6,6 @@ Unit::Unit() {
     unit_size = 0;
 }
 
-
 Unit::Unit(int unit_val, int num_beds, double unit_size) {
     this->unit_val = unit_val;
     this->num_beds = num_beds;
