@@ -9,5 +9,5 @@ int Motorbike::getParkingDuration(){
 
     std::time_t elapsedTime = currentTime - timeOfEntry;
 
-    return elapsedTime;
+    return (elapsedTime*0.85);
 };
