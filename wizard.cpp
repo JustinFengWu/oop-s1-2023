@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#include "Wizard.h"
-#include "Player.h"
+#include "wizard.h"
+#include "player.h"
 
 Wizard::Wizard(std::string name, int health, int damage, int mana) : Player(name, health, damage) {
   this->mana = mana;
