@@ -7,6 +7,7 @@ class ParkingLot{
     Vehicle ** vehicles;
     int maxCapacity;
     int currentCount;
+    int maxParkingDuration;
 
     public:
     ParkingLot(int maxCapacity);
@@ -14,6 +15,7 @@ class ParkingLot{
     int getCount();
     void unparkVehicle(int ID);
     ~ParkingLot();
+    int countOverstayingVehicles(int maxParkingDuration);
 
 };
 

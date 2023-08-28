@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdbool.h> 
 
-ParkingLot::ParkingLot(int maxCapacity) : maxCapacity(maxCapacity) {
+ParkingLot::ParkingLot(int maxCapacity) : maxCapacity(maxCapacity){
     this->currentCount = 0;
     vehicles = new Vehicle*[maxCapacity];
 }
@@ -41,4 +41,14 @@ void ParkingLot::unparkVehicle(int ID){
 
 ParkingLot::~ParkingLot() {
     delete[] vehicles;
+}
+
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration){
+    int overstayedVehicles = 0;
+    for (int i = 0; i < maxCapacity; i++){
+        if (vehicles[i]->getParkingDuration() > maxParkingDuration + 15) {
+            overstayedVehicles++;
+        }
+    }
+    return overstayedVehicles;
 }
