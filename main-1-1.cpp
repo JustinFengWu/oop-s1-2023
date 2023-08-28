@@ -6,7 +6,7 @@
 
 int main() {
     Wizard w1 ("The Great Sage", 30, 10, 5);
-    Warrior wa ("The Darkest nite", 45, 5, "Hasagi");
+    Warrior wa ("The Darkest nite", 45, 5, "Bob");
     Player opponent ("Evil Guy", 40, 10);
 
     while (w1.getHealth() > 0 || wa.getHealth() > 0) {

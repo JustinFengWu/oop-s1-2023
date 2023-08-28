@@ -4,9 +4,7 @@
 #include "wizard.h"
 #include "player.h"
 
-Wizard::Wizard(std::string name, int health, int damage, int mana) : Player(name, health, damage) {
-  this->mana = mana;
-}
+Wizard::Wizard(std::string name, int health, int damage, int mana) : Player(name, health, damage), mana(mana) {}
 
 void Wizard::setMana(int mana) { this->mana = mana; }
  
