@@ -11,10 +11,11 @@ ParkingLot::ParkingLot(int maxCapacity) : maxCapacity(maxCapacity) {
 void ParkingLot::parkVehicle(Vehicle * object){
     if (currentCount >= maxCapacity) {
         std::cout << "The lot is full" << std::endl;
+    } else {
+        vehicles[currentCount] = object;
+        currentCount++;
     }
 
-    vehicles[currentCount] = object;
-    currentCount++;
 }
 
 int ParkingLot::getCount(){
