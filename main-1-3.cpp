@@ -34,7 +34,7 @@ int main() {
     }
 
 
-    int overstayNum = p1.countOverstayingVehicles(5);
+    int overstayNum = p1.countOverstayingVehicles(1);
     std::cout << "There are " << overstayNum << " vehicles that has overstayed." << std::endl;
 
     return 0;
