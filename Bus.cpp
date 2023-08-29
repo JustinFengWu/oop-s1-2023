@@ -2,12 +2,12 @@
 #include "Bus.h"
 #include "Vehicle.h"
 
-Bus::Bus(int ID) : Vehicle(ID) { timeOfEntry = std::time(nullptr); };
+Bus::Bus(int ID) : Vehicle(ID) {};
 
 int Bus::getParkingDuration(){
     std::time_t currentTime = std::time(nullptr);
 
-    std::time_t elapsedTime = currentTime - timeOfEntry;
+    int elapsedTime = currentTime - timeOfEntry;
 
     return (elapsedTime*0.75);
 };

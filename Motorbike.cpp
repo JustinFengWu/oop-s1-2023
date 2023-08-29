@@ -2,12 +2,12 @@
 #include "Motorbike.h"
 #include "Vehicle.h"
 
-Motorbike::Motorbike(int ID) : Vehicle(ID) { timeOfEntry = std::time(nullptr); };
+Motorbike::Motorbike(int ID) : Vehicle(ID) { };
 
 int Motorbike::getParkingDuration(){
     std::time_t currentTime = std::time(nullptr);
 
-    std::time_t elapsedTime = currentTime - timeOfEntry;
+    int elapsedTime = currentTime - timeOfEntry;
 
     return (elapsedTime*0.85);
 };
