@@ -20,12 +20,12 @@ void ParkingLot::parkVehicle(Vehicle* object) {
         if (vehicles[i] == nullptr) {
             vehicles[i] = object;
             currentCount++;
-            std::cout << "Success parked" << std::endl;
+            // std::cout << "Success parked" << std::endl;
             return;  // Exit the loop after parking successfully
         }
     }
 
-    std::cout << "Failed" << std::endl;
+    // std::cout << "Failed" << std::endl;
         /*vehicles[currentCount] = object;
         currentCount++;*/
 }
@@ -43,7 +43,7 @@ void ParkingLot::unparkVehicle(int ID){
     for (int i = 0; i < maxCapacity; i++) {
         if (vehicles[i] != nullptr && vehicles[i]->getID() == ID){
             vehicles[i] = nullptr;
-            std::cout << "successfully unparked" << std::endl;
+            // std::cout << "successfully unparked" << std::endl;
             currentCount--;
             found = true;
         }
