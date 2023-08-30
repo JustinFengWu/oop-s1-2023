@@ -9,7 +9,7 @@ int Vehicle::getParkingDuration(){
     std::time_t currentTime;
     std::time(&currentTime);
 
-    std::time_t elapsedTime = currentTime - timeOfEntry;
+    int elapsedTime = currentTime - timeOfEntry;
 
     return elapsedTime;
 };

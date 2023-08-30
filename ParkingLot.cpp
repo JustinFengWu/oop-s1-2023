@@ -52,3 +52,7 @@ int ParkingLot::countOverstayingVehicles(int maxParkingDuration){
     }
     return overstayedVehicles;
 }
+
+int ParkingLot::getTime(int index) {
+    return vehicles[index]->getParkingDuration();
+}

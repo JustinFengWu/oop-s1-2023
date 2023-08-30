@@ -16,6 +16,7 @@ class ParkingLot{
     void unparkVehicle(int ID);
     ~ParkingLot();
     int countOverstayingVehicles(int maxParkingDuration);
+    int getTime(int index);
 
 };
 
