@@ -5,8 +5,8 @@
 #include "Car.h"
 #include <iostream>
 #include <string>
-#include <thread>
-#include <chrono>
+#include <windows.h>
+using namespace std;
 
 int main() {
     ParkingLot p1(10);
@@ -26,7 +26,7 @@ int main() {
         p1.parkVehicle(m);
     }
 
-    int response;
+    /*int response;
     std::cout << "Enter a number (1 to exit, 2 for Car, 3 for Bus, 4 for Motorbike): ";
     std::cin >> response;
 
@@ -40,9 +40,19 @@ int main() {
         }
         std::cout << "Enter a number (1 to exit, 2 for Car, 3 for Bus, 4 for Motorbike): ";
         std::cin >> response;
-    }
+    }*/
 
-    int overstayNum = p1.countOverstayingVehicles(1);
+    std::cout << "starting count" << std::endl;
+
+    clock_t start_time = clock();
+    while (clock() - start_time < 4 * CLOCKS_PER_SEC) {}
+
+    std::cout << "The current parking time for Car 1 is: " << p1.getTime(1) << std::endl;
+    std::cout << "The current parking time for Car 1 is: " << p1.getTime(5) << std::endl;
+    std::cout << "The current parking time for Car 1 is: " << p1.getTime(9) << std::endl;
+
+
+    int overstayNum = p1.countOverstayingVehicles(3);
     std::cout << "There are " << overstayNum << " vehicles that have overstayed." << std::endl;
 
     return 0;
