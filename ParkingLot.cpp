@@ -46,7 +46,7 @@ ParkingLot::~ParkingLot() {
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration){
     int overstayedVehicles = 0;
     for (int i = 0; i < maxCapacity; i++){
-        if (vehicles[i]->getParkingDuration() > maxParkingDuration + 15) {
+        if (vehicles[i]->getParkingDuration() > maxParkingDuration) {
             overstayedVehicles++;
         }
     }
