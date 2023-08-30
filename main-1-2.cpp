@@ -39,5 +39,9 @@ int main() {
 
     p1.unparkVehicle(vehicleID);
 
+    p1.parkVehicle(new Car(15));
+
+
+
     return 0;
 }

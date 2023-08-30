@@ -6,17 +6,32 @@
 ParkingLot::ParkingLot(int maxCapacity) : maxCapacity(maxCapacity){
     this->currentCount = 0;
     vehicles = new Vehicle*[maxCapacity];
+    for (int i = 0; i < maxCapacity; i++) {
+        vehicles[i] = nullptr;
+    }
 }
 
-void ParkingLot::parkVehicle(Vehicle * object){
+void ParkingLot::parkVehicle(Vehicle* object) {
     if (currentCount >= maxCapacity) {
         std::cout << "The lot is full" << std::endl;
-    } else {
-        vehicles[currentCount] = object;
-        currentCount++;
+        return;
+    }
+    for (int i = 0; i < maxCapacity; i++) {
+        if (vehicles[i] == nullptr) {
+            vehicles[i] = object;
+            currentCount++;
+            std::cout << "Success parked" << std::endl;
+            return;  // Exit the loop after parking successfully
+        }
     }
 
+    std::cout << "Failed" << std::endl;
+        /*vehicles[currentCount] = object;
+        currentCount++;*/
 }
+
+    
+
 
 int ParkingLot::getCount(){
     return currentCount;
@@ -26,8 +41,9 @@ void ParkingLot::unparkVehicle(int ID){
     bool found = false;
 
     for (int i = 0; i < maxCapacity; i++) {
-        if (vehicles[i]->getID() == ID){
-            delete vehicles[i];
+        if (vehicles[i] != nullptr && vehicles[i]->getID() == ID){
+            vehicles[i] = nullptr;
+            std::cout << "successfully unparked" << std::endl;
             currentCount--;
             found = true;
         }
