@@ -8,7 +8,7 @@ int Vehicle::getID(){ return ID; }
 int Vehicle::getParkingDuration(){
     std::time_t currentTime = std::time(nullptr);
 
-    int elapsedTime = timeOfEntry - currentTime;
+    int elapsedTime = currentTime - timeOfEntry;
     /*int elapsedTime = difftime(currentTime, timeOfEntry);*/
 
     return elapsedTime;

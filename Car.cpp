@@ -7,7 +7,7 @@ Car::Car(int ID) : Vehicle(ID) {};
 int Car::getParkingDuration(){
     std::time_t currentTime = std::time(nullptr);
 
-    int elapsedTime = timeOfEntry - currentTime;
+    int elapsedTime = currentTime - timeOfEntry;
     /*int elapsedTime = difftime(currentTime, timeOfEntry);*/
 
     return (elapsedTime*0.9);
