@@ -15,15 +15,19 @@ bool House::addAppliance(Appliance* appliance){
     if (currentNum < numAppliances) {
         appliances[currentNum] = appliance;
         return true;
-    } else if ( currentNum >= numAppliances) {
+    } else {
         return false;
     }
 }
 
 double House::getTotalPowerConsumption() {
-    double totalPowerConsumption;
-    for (int i = 0; i < currentNum; ) {
+    double totalPowerConsumption = 0;
+    for (int i = 0; i < currentNum; i++) {
         totalPowerConsumption += appliances[i]->getPowerConsumption();
     }
     return totalPowerConsumption;
+}
+
+House::~House() {
+    delete[] appliances; // Deallocate the dynamically allocated memory
 }
