@@ -9,7 +9,7 @@ void Helicopter::fly(int headwind, int minutes) {
     float usedFuel = 0;
     int weightOver = 0;
     if (weight > 5670) {
-        weightOver = 5670 - weight;
+        weightOver = weight - 5670;
     }
 
     if (headwind >= 40) {
