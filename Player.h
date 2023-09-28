@@ -1,6 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <string>
+#include "Pot.h"
+#include "Ingredient.h"
 
 class Player {
 
@@ -15,7 +17,7 @@ class Player {
     Ingredient ** inventory;
     int currentNumberIngredients;
     int inventorySize;
-    Vial ** vialStorage;
+    Pot ** vialStorage;
     int currentNumberVials;
     int storageSize;
 
@@ -55,9 +57,7 @@ class Player {
 
     void pour();
 
-    void add_ingredient();
     void change_location();
-
 };
 
 #endif

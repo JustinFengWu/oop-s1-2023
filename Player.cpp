@@ -1,4 +1,6 @@
 #include "Player.h"
+#include "Pot.h"
+#include "Ingredient.h"
 #include <ctype.h>
 
 Player::Player(int inventorySize, int storageSize) {
@@ -11,9 +13,9 @@ Player::Player(int inventorySize, int storageSize) {
     arcana = 0;
     location = "box";
     playerTime = 0;
-    inventory = new Ingredient * [ingredientSize];
+    inventory = new Ingredient * [inventorySize];
     currentNumberIngredients = 0;
-    vialStorage = new Vial * [storageSize];
+    vialStorage = new Pot * [storageSize];
     currentNumberVials = 0;
 }
 Player::~Player() {
@@ -97,9 +99,6 @@ void Player::pour() {
     // require class pot and inherited class vials
 }
 
-void Player::add_ingredient() {
-    // adds ingredient to pot
-}
 void Player::change_location() {
     if (location == "box") {
         location = "pot";
