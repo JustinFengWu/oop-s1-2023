@@ -3,16 +3,25 @@
 #include <string>
 
 Ingredient::Ingredient(int id, std::string name, int lethalius, int melatonius, int adrenalius, int tankius, int luckius, double freshness, bool isCursed) : Explosive() {
-            this->id = id;
-            this->name = name;
-            this->lethalius = lethalius;
-            this->melatonius = melatonius;
-            this->adrenalius = adrenalius;
-            this->tankius = tankius;
-            this->luckius = luckius;
-            this->freshness = freshness;
-            this->isCursed = isCursed;
-        }
+    this->id = id;
+    this->name = name;
+
+    this->isCursed = isCursed;
+    this->freshness = freshness;
+    if (isCursed == true) {
+        this->lethalius = lethalius * freshness * -1;
+        this->melatonius = melatonius * freshness * -1;
+        this->adrenalius = adrenalius * freshness * -1;
+        this->tankius = tankius * freshness * -1;
+        this->luckius = luckius * freshness * -1;
+    } else {
+        this->lethalius = lethalius * freshness;
+        this->melatonius = melatonius * freshness;
+        this->adrenalius = adrenalius * freshness;
+        this->tankius = tankius * freshness;
+        this->luckius = luckius * freshness;
+    }
+}
 
 int Ingredient::get_id() {
     return id;

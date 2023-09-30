@@ -12,7 +12,7 @@ class IngredientList {
     public:
     IngredientList(int typesOfIngredients);
     ~IngredientList();
-    void addIngredient(Ingredient * ingredient);
+    void generate_ingredient(int numberOfIngredients);
 };
 
 #endif
