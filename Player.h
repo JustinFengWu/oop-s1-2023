@@ -3,6 +3,7 @@
 #include <string>
 #include "Pot.h"
 #include "Ingredient.h"
+#include "IngredientList.h"
 
 class Player {
 
@@ -51,11 +52,11 @@ class Player {
     int get_currentNumberIngredients();
     int get_currentNumberVials();
 
-    void get_ingredients();
+    void get_ingredients(int inventorySize, IngredientList list);
     void dump_ingredient(int index);
     void eat_ingredient(int index);
 
-    void pour();
+    void pour(Pot * pot, int storageSize);
 
     void change_location();
 };

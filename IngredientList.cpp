@@ -6,7 +6,7 @@
 
 IngredientList::IngredientList(int numberOfIngredients) {
     this->numberOfIngredients = numberOfIngredients;
-    list = new Explosive * [numberOfIngredients];
+    list = new Ingredient * [numberOfIngredients];
     for (int i = 0; i < numberOfIngredients; i++) {
         list[i] = nullptr;
     }
@@ -93,4 +93,9 @@ void IngredientList::generate_ingredient(int numberOfIngredients) {
             break;
         }
     }
+
+}
+
+Ingredient* IngredientList::get_ingredient(int index) {        
+    return list[index];
 }

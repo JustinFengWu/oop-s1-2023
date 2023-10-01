@@ -6,13 +6,14 @@
 class IngredientList {
 
     private: 
-    Explosive ** list;
+    Ingredient ** list;
     int numberOfIngredients;
 
     public:
     IngredientList(int typesOfIngredients);
     ~IngredientList();
     void generate_ingredient(int numberOfIngredients);
+    Ingredient * get_ingredient(int index);
 };
 
 #endif
