@@ -136,6 +136,66 @@ void Player::eat_ingredient(int index) {
         arcana = 0;
     }
 
+    if ( 0 <= inventory[index]->get_lethalius() <= 20 ) {
+        std::cout << "My mouth feels tingly... " << std::endl;
+    } else if ( 20 < inventory[index]->get_lethalius() <= 40 ) {
+        std::cout << "Wow! That's spicy... " << std::endl;
+    } else if ( 40 < inventory[index]->get_lethalius() <= 60 ) {
+        std::cout << "My stomach hurts... " << std::endl;
+    } else if ( 60 < inventory[index]->get_lethalius() <= 80 ) {
+        std::cout << "This could give me food poisoning... " << std::endl;
+    } else if ( 80 < inventory[index]->get_lethalius() <= 100 ) {
+        std::cout << "This could definitely kill me... " << std::endl;
+    }
+
+    if ( 0 <= inventory[index]->get_melatonius() <= 20 ) {
+        std::cout << "This could make me slightly tired... " << std::endl;
+    } else if ( 20 < inventory[index]->get_melatonius() <= 40 ) {
+        std::cout << "This could make me tired... " << std::endl;
+    } else if ( 40 < inventory[index]->get_melatonius() <= 60 ) {
+        std::cout << "This could make me slightly sleepy... " << std::endl;
+    } else if ( 60 < inventory[index]->get_melatonius() <= 80 ) {
+        std::cout << "This could make me sleepy... " << std::endl;
+    } else if ( 80 < inventory[index]->get_melatonius() <= 100 ) {
+        std::cout << "This could put me straight to sleep... " << std::endl;
+    }
+
+    if ( 0 <= inventory[index]->get_adrenalius() <= 20 ) {
+        std::cout << "I don't feel anything... " << std::endl;
+    } else if ( 20 < inventory[index]->get_adrenalius() <= 40 ) {
+        std::cout << "This makes me feel awake... " << std::endl;
+    } else if ( 40 < inventory[index]->get_adrenalius() <= 60 ) {
+        std::cout << "This makes me feel strong... " << std::endl;
+    } else if ( 60 < inventory[index]->get_adrenalius() <= 80 ) {
+        std::cout << "Why is eveything now in slow motion? " << std::endl;
+    } else if ( 80 < inventory[index]->get_adrenalius() <= 100 ) {
+        std::cout << "Ooww this takes a toll on my heart... " << std::endl;
+    }
+
+    if ( 0 <= inventory[index]->get_tankius() <= 20 ) {
+        std::cout << "My skin feels rough... " << std::endl;
+    } else if ( 20 < inventory[index]->get_tankius() <= 40 ) {
+        std::cout << "My skin feels thicker... " << std::endl;
+    } else if ( 40 < inventory[index]->get_tankius() <= 60 ) {
+        std::cout << "I'm losing my sense of taste... " << std::endl;
+    } else if ( 60 < inventory[index]->get_tankius() <= 80 ) {
+        std::cout << "I'm can barely feel anything... " << std::endl;
+    } else if ( 80 < inventory[index]->get_tankius() <= 100 ) {
+        std::cout << "I can't feel anything... " << std::endl;
+    }
+
+    if ( 0 <= inventory[index]->get_luckius() <= 20 ) {
+        std::cout << "This emits a feeling of impending doom...  " << std::endl;
+    } else if ( 20 < inventory[index]->get_luckius() <= 40 ) {
+        std::cout << "This makes me feel kind of bad... " << std::endl;
+    } else if ( 40 < inventory[index]->get_luckius() <= 60 ) {
+        std::cout << "This makes me feel good... " << std::endl;
+    } else if ( 60 < inventory[index]->get_luckius() <= 80 ) {
+        std::cout << "This makes me feel great... " << std::endl;
+    } else if ( 80 < inventory[index]->get_luckius() <= 100 ) {
+        std::cout << "I feel godly... " << std::endl;
+    }
+
  // state the effects of the damn ingredients. Going to need a shit load of if statements and outputs.
 
 }
