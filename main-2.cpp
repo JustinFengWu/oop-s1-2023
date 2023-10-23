@@ -4,8 +4,8 @@
 #include <iostream>
 
 int main() {
-    Ship ship(10, 20, 'E');
-    Mine mine(10, 20, 'E');
+    Ship ship(10, 20);
+    Mine mine(10, 20);
     Explosion explosion(10, 20, 'E');
 
     std::cout << "The position of the ship is: " << std::get<0>(ship.getPos()) << ", " << std::get<1>(ship.getPos()) << std::endl;
