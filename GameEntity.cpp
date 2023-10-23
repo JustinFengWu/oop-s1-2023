@@ -1,11 +1,10 @@
 #include "GameEntity.h"
 #include <tuple>
 
-using namespace std;
 
-GameEntity::GameEntity(int x, int y, char type) : position(make_tuple(x, y)), type(type) { }
+GameEntity::GameEntity(int x, int y, char type) : position(std::make_tuple(x, y)), type(type) { }
 
-tuple<int, int> GameEntity::getPos() {
+std::tuple<int, int> GameEntity::getPos() {
     return position;
 }
 

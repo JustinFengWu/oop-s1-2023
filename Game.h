@@ -4,10 +4,10 @@
 #include "GameEntity.h"
 
 
-using namespace std;
+
 class Game {
     private:
-    vector<GameEntity *> entities;
+    std::vector<GameEntity *> entities;
     int currentCount = 0;
     int numShips;
     int numDestroyedShips;
@@ -15,7 +15,7 @@ class Game {
     public:
     GameEntity* get_entities(int index);
     void set_entities(GameEntity* entity, int index);
-    vector<GameEntity *> initGame(int numShips, int numMines, int gridWidth, int gridHeight);
+    std::vector<GameEntity *> initGame(int numShips, int numMines, int gridWidth, int gridHeight);
     void gameLoop(int maxIterations, double mineDistanceThreshold);
 
 };

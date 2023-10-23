@@ -11,10 +11,9 @@
 #include "Explosion.h"
 #include <stdbool.h>
 
-using namespace std;
 GameEntity* Game::get_entities(int index) {
     if (index > entities.size() - 1) {
-        cout << "invalid" << endl;
+        std::cout << "invalid" << std::endl;
     }
 
     return entities[index];
@@ -22,30 +21,30 @@ GameEntity* Game::get_entities(int index) {
 
 void Game::set_entities(GameEntity* entity, int index) {
     if (index > entities.size() - 1) {
-        cout << "invalid" << endl;
+        std::cout << "invalid" << std::endl;
     }
 
     delete entities[index];
     entities[index] = entity;
 }
 
-vector<GameEntity *> Game::initGame(int numShips, int numMines, int gridWidth, int gridHeight) {
+std::vector<GameEntity *> Game::initGame(int numShips, int numMines, int gridWidth, int gridHeight) {
     this->numShips = numShips;
-    tuple<int, int> randomPosition;
+    std::tuple<int, int> randomPosition;
     for (int i = 0; i < numShips ; i++) {
         randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
-        Ship * ship = new Ship(get<0>(randomPosition), get<1>(randomPosition), 'S');
+        Ship * ship = new Ship(std::get<0>(randomPosition), std::get<1>(randomPosition), 'S');
         entities.push_back(ship);
         currentCount++;
-        this_thread::sleep_for(chrono::seconds(1));
-        cout << "created Ship" << endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout << "created Ship" << std::endl;
     }
     for (int i = 0; i < numMines ; i++) {
         randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
-        entities.push_back(new Mine(get<0>(randomPosition), get<1>(randomPosition), 'M'));
+        entities.push_back(new Mine(std::get<0>(randomPosition), std::get<1>(randomPosition), 'M'));
         currentCount++;
-        this_thread::sleep_for(chrono::seconds(1));
-        cout << "created Mine" << endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout << "created Mine" << std::endl;
     }
 
     return entities;
@@ -59,7 +58,7 @@ void Game::gameLoop(int maxIterations, double mineDistanceThreshold) {
         for (int j = 0; j < entities.size(); j++) {
             if (entities[j]->getType() == 'S') {
                 static_cast<Ship*>(entities[j])->move(1, 0);
-                cout << "ship moved" << endl;
+                std::cout << "ship moved" << std::endl;
             }
 
             for (int z = 0; z < entities.size(); z++) {
@@ -68,7 +67,7 @@ void Game::gameLoop(int maxIterations, double mineDistanceThreshold) {
                         Explosion tempExplosion = static_cast<Mine*>(entities[z])->explode();
                         delete entities[z];
                         entities[z] = &tempExplosion;
-                        cout << "ship exploded" << endl;
+                        std::cout << "ship exploded" << std::endl;
                         numDestroyedShips++;
                     }
                 }
