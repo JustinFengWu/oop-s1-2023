@@ -22,16 +22,13 @@ class Game {
     int numDestroyedShips;
 
     public:
-    GameEntity* get_entities(int index) {
-        if (index > entities.size() - 1) {
-            std::cout << "invalid" << std::endl;
-        }
+    std::vector<GameEntity*> get_entities() {
 
-        return entities[index];
+        return entities;
     }
 
     void set_entities(GameEntity* entity, int index) {
-        if (index > entities.size() - 1) {
+        if (index > static_cast<int>(entities.size()) - 1) {
             std::cout << "invalid" << std::endl;
         }
 
@@ -44,7 +41,7 @@ class Game {
         std::tuple<int, int> randomPosition;
         for (int i = 0; i < numShips ; i++) {
             randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
-            Ship * ship = new Ship(std::get<0>(randomPosition), std::get<1>(randomPosition), 'S');
+            Ship * ship = new Ship(std::get<0>(randomPosition), std::get<1>(randomPosition));
             entities.push_back(ship);
             currentCount++;
             std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -52,7 +49,7 @@ class Game {
         }
         for (int i = 0; i < numMines ; i++) {
             randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
-            entities.push_back(new Mine(std::get<0>(randomPosition), std::get<1>(randomPosition), 'M'));
+            entities.push_back(new Mine(std::get<0>(randomPosition), std::get<1>(randomPosition)));
             currentCount++;
             std::this_thread::sleep_for(std::chrono::seconds(1));
             std::cout << "created Mine" << std::endl;
@@ -63,16 +60,15 @@ class Game {
 
     void gameLoop(int maxIterations, double mineDistanceThreshold) {
         numDestroyedShips = 0;
-        bool foundShip = false;
         for (int i = 0; i < maxIterations; i++) {
 
-            for (int j = 0; j < entities.size(); j++) {
+            for (int j = 0; j < static_cast<int>(entities.size()); j++) {
                 if (entities[j]->getType() == 'S') {
                     static_cast<Ship*>(entities[j])->move(1, 0);
                     std::cout << "ship moved" << std::endl;
                 }
 
-                for (int z = 0; z < entities.size(); z++) {
+                for (int z = 0; z < static_cast<int>(entities.size()); z++) {
                     if (entities[z]->getType() == 'M') {
                         if (Utils::calculateDistance(entities[j]->getPos(), entities[z]->getPos()) <= mineDistanceThreshold) {
                             Explosion tempExplosion = static_cast<Mine*>(entities[z])->explode();
