@@ -67,7 +67,9 @@ class Game {
                     static_cast<Ship*>(entities[j])->move(1, 0);
                     std::cout << "ship moved" << std::endl;
                 }
+            }
 
+            for (int j = 0; j < static_cast<int>(entities.size()); j++) {
                 for (int z = 0; z < static_cast<int>(entities.size()); z++) {
                     if (entities[z]->getType() == 'M') {
                         if (Utils::calculateDistance(entities[j]->getPos(), entities[z]->getPos()) <= mineDistanceThreshold) {
@@ -76,6 +78,7 @@ class Game {
                             entities[z] = &tempExplosion;
                             std::cout << "ship exploded" << std::endl;
                             numDestroyedShips++;
+                            break;
                         }
                     }
                 }
