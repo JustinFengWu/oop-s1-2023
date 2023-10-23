@@ -74,8 +74,8 @@ class Game {
                     if (entities[z]->getType() == 'M') {
                         if (Utils::calculateDistance(entities[j]->getPos(), entities[z]->getPos()) <= mineDistanceThreshold) {
                             Explosion tempExplosion = static_cast<Mine*>(entities[z])->explode();
-                            delete entities[z];
-                            entities[z] = &tempExplosion;
+                            // delete entities[z];
+                            // entities[z] = &tempExplosion;
                             std::cout << "ship exploded" << std::endl;
                             numDestroyedShips++;
                             break;
