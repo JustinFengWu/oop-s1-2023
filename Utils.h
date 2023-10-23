@@ -10,7 +10,7 @@ class Utils {
     public:
     Utils();
     static tuple<int, int> generateRandomPos(int gridwidth, int grdHeigth);
-    static double calculateDistance(tuple<int, int> pos1, tuple<int, int> pos2);
+    static double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2);
 
 };
 
