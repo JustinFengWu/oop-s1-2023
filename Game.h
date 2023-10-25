@@ -30,7 +30,6 @@ class Game {
         for (int i = 0; i < numCharacters; i++) {
             std::tuple<int, int> randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
             grid.push_back(new Character(std::get<0>(randomPosition), std::get<0>(randomPosition)));
-            std::cout << "character created." << std::endl;
         }
 
         for (int i = 0; i < numTraps; i++) {
@@ -72,6 +71,7 @@ class Game {
 
         }
         std::cout << "Maximum number of iterations reached. Game Over." << std::endl;
+        return;
     }
 
 };
