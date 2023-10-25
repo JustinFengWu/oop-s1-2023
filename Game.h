@@ -57,11 +57,12 @@ class Game {
                 if (grid[j]->getType() == 'C') {
                     for (int z = 0; z < static_cast<int>(grid.size()); z++) {
                         if (grid[z]->getType() == 'T') {
-                            if(Utils::calculateDistance(grid[j]->getPos(), grid[z]->getPos()) <= trapActivationDistance) {
+                            if(Utils::calculateDistance(grid[j]->getPos(), grid[z]->getPos()) <= trapActivationDistance && static_cast<Trap*>(grid[z])->isActive() == true) {
                                 static_cast<Trap*>(grid[z])->apply(*grid[j]);
                                 // std::cout << "Trap activated" << std::endl;
                                 // std::cout << grid[j]->getType() << std::endl;
                             }
+                            break;
                         }
                     }
                 }
