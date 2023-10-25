@@ -73,6 +73,16 @@ class Game {
                 }
             }
 
+            bool noMoreCharacters = true;
+            for (int j = 0; j < static_cast<int>(grid.size()); j++) {
+                if (grid[j]->getType() == 'C') {
+                    noMoreCharacters = false;
+                }
+            }
+
+            if (noMoreCharacters == true) {
+                return;
+            }
 
         }
         std::cout << "Maximum number of iterations reached. Game Over." << std::endl;
