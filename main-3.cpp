@@ -9,7 +9,7 @@
 
 int main() {
     Game g;
-    g.initGame(1, 2, 1, 1);
-    g.gameLoop(3, 0);
+    g.initGame(1, 2, 4, 4);
+    g.gameLoop(2, 5);
     return 0;
 }

@@ -59,8 +59,8 @@ class Game {
                         if (grid[z]->getType() == 'T') {
                             if(Utils::calculateDistance(grid[j]->getPos(), grid[z]->getPos()) <= trapActivationDistance) {
                                 static_cast<Trap*>(grid[z])->apply(*grid[j]);
-                                std::cout << "Trap activated" << std::endl;
-                                std::cout << grid[j]->getType() << std::endl;
+                                // std::cout << "Trap activated" << std::endl;
+                                // std::cout << grid[j]->getType() << std::endl;
                             }
                         }
                     }
