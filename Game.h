@@ -35,7 +35,6 @@ class Game {
         for (int i = 0; i < numTraps; i++) {
             std::tuple<int, int> randomPosition = Utils::generateRandomPos(gridWidth, gridHeight);
             grid.push_back(new Trap(std::get<0>(randomPosition), std::get<0>(randomPosition)));
-            std::cout << "trap created." << std::endl;
         }
     }
 
